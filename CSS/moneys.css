@@ -1,0 +1,19 @@
+body {
+	font-family:"Lucida Grande", "Lucida Sans Unicode", Verdana, Arial, Helvetica, sans-serif;
+	font-size:12px;
+	margin:0;
+	padding:0;
+}
+div#top {
+	text-align:center;
+	background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#afd7d7), to(#ffffff));
+}
+div#all {
+	text-align:center;
+	width:800pt;
+	margin-right: auto; 
+	margin-left: auto;
+}
+table {
+	border: 1px solid black;
+}

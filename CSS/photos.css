@@ -1,0 +1,61 @@
+body {
+	font-family:"Lucida Grande", "Lucida Sans Unicode", Verdana, Arial, Helvetica, sans-serif;
+	font-size:12px;
+	margin:0;
+	padding:0px;
+}
+div#top {
+	margin-top:0;
+	text-align:center;
+	background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#afd7d7), to(#ffffff));
+}
+div#all {
+	width:900pt;
+	margin-right: auto; 
+	margin-left: auto;
+}
+div#left {
+	float:left;
+	width:250pt;
+}
+div#right {
+	float:left;
+	height:600pt;
+	width:600pt;
+}
+img#theImage {
+	max-height:500px;
+	max-width:600px;
+	overflow:hidden;
+}
+button#viewFancybox {
+   border-top: 1px solid #96d1f8;
+   background: #65a9d7;
+   background: -webkit-gradient(linear, left top, left bottom, from(#3e779d), to(#65a9d7));
+   background: -webkit-linear-gradient(top, #3e779d, #65a9d7);
+   background: -moz-linear-gradient(top, #3e779d, #65a9d7);
+   background: -ms-linear-gradient(top, #3e779d, #65a9d7);
+   background: -o-linear-gradient(top, #3e779d, #65a9d7);
+   padding: 9.5px 19px;
+   -webkit-border-radius: 17px;
+   -moz-border-radius: 17px;
+   border-radius: 17px;
+   -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   box-shadow: rgba(0,0,0,1) 0 1px 0;
+   text-shadow: rgba(0,0,0,.4) 0 1px 0;
+   color: white;
+   font-size: 17px;
+   font-family: Georgia, serif;
+   text-decoration: none;
+   vertical-align: middle;
+}
+button#viewFancybox:hover {
+   border-top-color: #28597a;
+   background: #28597a;
+   color: #ccc;
+}
+button#viewFancybox:active {
+   border-top-color: #1b435e;
+   background: #1b435e;
+}

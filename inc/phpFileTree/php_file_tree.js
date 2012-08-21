@@ -71,4 +71,4 @@ function init_php_file_tree() {
 	return false;
 }
 
-window.onload = init_php_file_tree;
+//window.onload = init_php_file_tree;

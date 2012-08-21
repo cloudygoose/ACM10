@@ -1,12 +1,36 @@
+在chrome和firefox下跑的很好，但在ie下不行，不知道为什么
+
 数据库
 1.将mysql/bin加入系统path
 
 2.修改root密码，在cmd中键入
 mysqladmin -u root -p password yournewpassword
 
-3.为了使用phpmyadmin，修改xampp的phpmyadmin目录下的config.inc.php中的password
+3.为了使用phpmyadmin，修改xampp的phpmyadmin目录下的config.inc.php中的password为mySQL的密码
 $cfg['Servers'][$i]['user'] = 'root';
 $cfg['Servers'][$i]['password'] = '修改这里';
 
 4.重命名inc/init-publish.php为init.php
 并且修改里面的密码
+
+5.在xampp下的php/php.ini修改时区，同时修改不要php错误提示信息显示
+date.timezone = Asia/Shanghai
+display_errors = Off
+
+6.关于编码
+一些文件可能需要把自身编码转成utf8，就是说，用记事本打开，另存为utf8格式。
+
+7.关于cookie
+关于cookie的一些设定在index.php中，别的地方也会用到，如moneys.php
+
+8.关于fancybox
+为了让fancybox不进入画廊模式，对fancybox的库也进行了一些修改，在jquery.fancybox.css中改成
+.fancybox-prev {
+	display:none;
+	left: 0;
+}
+
+.fancybox-next {
+	display:none;
+	right: 0;
+}

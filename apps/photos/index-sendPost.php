@@ -13,7 +13,7 @@ else
 <button class = "clickButton" id = "aa">aa</button>
 <button class = "clickButton" id = "bb">bb</button>
 <script type="text/javascript">
-function sendPost(){
+function sendPost() {
 	var myForm = document.createElement("form");
 	myForm.method = "post";
 	myForm.action = "index.php";

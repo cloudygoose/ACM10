@@ -1,13 +1,32 @@
-<!-- This is the init.php for publishing, some secret code is not set in this php -->
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
-	<script src = "jquery-min-1.8.0.js" type = "text/javascript"></script>
 </head>
 <?php
 include_once($_SERVER['DOCUMENT_ROOT'] . '/acm10/inc/flourish-config.php'); //for flourish
 include_once($_SERVER['DOCUMENT_ROOT'] . '/acm10/inc/phpFileTree/php_file_tree.php'); //for Filetree in the photos app
-include_once($_SERVER['DOCUMENT_ROOT'] . '/acm10/models/Notice.php'); //the Notice model
+include_once($_SERVER['DOCUMENT_ROOT'] . '/acm10/models/Notice.php'); //models
 include_once($_SERVER['DOCUMENT_ROOT'] . '/acm10/models/NoticeBackup.php'); 
-fORMDatabase::attach(new fDatabase('mysql', 'acm10', 'root', 'YOURCODE'));
-$db = fORMDatabase::retrieve();
+include_once($_SERVER['DOCUMENT_ROOT'] . '/acm10/models/MoneyRecord.php'); 
+fORMDatabase::attach(new fDatabase('mysql', 'acm10', 'root', '***'));
+$db = fORMDatabase::retrieve();       
+$db->query("set names utf8");
+$imageRoot = "./../../acmimages"; //set path for images, some further configuration in photos.php, it should be set relative to apps/photos/
+global $normalPass;
+$normalPass = "****";
+global $pangPass;
+$pangPass = "******";
+function findCookie()
+{
+	global $normalPass;
+	global $pangPass;
+	$nowPass = fCookie::get('acm10Pass', 'none');
+	if ($nowPass == $normalPass) return "acmer";
+	if ($nowPass == $pangPass) return "pangzi";
+	return "none";	
+}
+if (findCookie() == 'none')
+{
+	if (fUTF8::cmp(fURL::get(), "/acm10/index.php"))
+		fURL::redirect('/acm10/index.php');
+}

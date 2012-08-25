@@ -1,0 +1,9 @@
+数据库
+1.将mysql/bin加入系统path
+
+2.修改root密码，在cmd中键入
+mysqladmin -u root -p password yournewpassword
+
+3.为了使用phpmyadmin，修改xampp的phpmyadmin目录下的config.inc.php中的password
+$cfg['Servers'][$i]['user'] = 'root';
+$cfg['Servers'][$i]['password'] = '修改这里';

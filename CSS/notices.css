@@ -1,0 +1,54 @@
+body {
+	text-align:center;
+	font-family:"Lucida Grande", "Lucida Sans Unicode", Verdana, Arial, Helvetica, sans-serif;
+	font-size:12px;
+	margin:0;
+	padding:0;
+}
+div#top {
+	background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#afd7d7), to(#ffffff));
+}
+div#all {
+	width:600pt;
+	margin-right: auto; 
+	margin-left: auto;
+}
+form#aForm {
+	border:solid 2px #b7ddf2;
+	padding-top:5pt;
+	background:#ebf4fb;
+}
+input[type="text"], textarea{
+	border:solid 1px #aacfe4;
+	font-size:15px;
+}
+input[name="remove"], input[name="edit"] {
+	float:right;
+	margin-right:5pt;
+	background:#33CCFF;
+	text-align:center;
+	color:#FFFFFF;
+	font-weight:bold;
+}
+input[name="new"], input[name="home"] {
+	float:left;
+	margin-left:5pt;
+	background:#33CCFF;
+	text-align:center;
+	color:#FFFFFF;
+	font-weight:bold;
+}
+
+span#titleAndAuthor {
+	float:left;
+	margin-left:15pt;
+}
+h1 {
+	font-size:30px;
+}
+a {
+	color:#000;
+}
+p {
+	font-size:15px;
+}

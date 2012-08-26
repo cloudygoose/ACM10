@@ -14,6 +14,13 @@ if (fRequest::isPost()) {
 		$theNotice->setAuthor(fRequest::get('author'));
 		$theNotice->setTitle(fRequest::get('title'));
 		$theNotice->store();	
+		
+		//saving a backup to TABLE noticebackups
+		$backup = new NoticeBackup();
+		$backup->setContent(fRequest::get('content'));
+		$backup->setAuthor(fRequest::get('author'));
+		$backup->setTitle(fRequest::get('title'));
+		$backup->store();
 	}
 }
 if (fRequest::isGet()) {
@@ -32,7 +39,6 @@ $result->unescape(array(
     'content'       => 'string'
 ));
 //the button for adding a new notice.
-echo '<div id = "all">';
 for ($i = $result->countReturnedRows() - 1;$i >= 0;$i--) {
 	$result->seek($i);
 	$row = $result->fetchRow();
@@ -46,5 +52,4 @@ for ($i = $result->countReturnedRows() - 1;$i >= 0;$i--) {
 	echo '<input type = "submit" name = "edit" value = "submit"/><br/><br/>';
 	echo '</form>';
 }
-echo '</div>';
 include_once('notices-tail.php');

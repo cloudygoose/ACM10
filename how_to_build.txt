@@ -7,3 +7,6 @@ mysqladmin -u root -p password yournewpassword
 3.为了使用phpmyadmin，修改xampp的phpmyadmin目录下的config.inc.php中的password
 $cfg['Servers'][$i]['user'] = 'root';
 $cfg['Servers'][$i]['password'] = '修改这里';
+
+4.重命名inc/init-publish.php为init.php
+并且修改里面的密码

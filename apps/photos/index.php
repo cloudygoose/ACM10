@@ -1,33 +1,14 @@
+<?php
+include_once("../../inc/init.php");
+include_once("../../inc/phpFileTree/php_file_tree.php");
+?>
 <head>
+	<link href="./../../inc/phpFileTree/styles/default/default.css" rel="stylesheet" type="text/css" media="screen" />
 </head>
 <body>
+<script src="./../../inc/phpFileTree/php_file_tree.js" type="text/javascript"></script>
 <?php
-include_once('init.php');
-if (fRequest::isPost())
-{
-	echo 'getpost id : '.fRequest::get('name');
-}
-else
-	echo 'no post<br/>';
+	echo "111<br/>";
+	echo php_file_tree($_SERVER['DOCUMENT_ROOT']."/../../../images", "javascript:alert('You clicked on [link]');");
 ?>
-<button class = "clickButton" id = "aa">aa</button>
-<button class = "clickButton" id = "bb">bb</button>
-<script type="text/javascript">
-function sendPost(){
-	var myForm = document.createElement("form");
-	myForm.method = "post";
-	myForm.action = "index.php";
-	var myInput = document.createElement("input");
-	myInput.type = "text";
-	myInput.name = "name";
-	myInput.value= this.id;
-	myForm.appendChild(myInput);
-	
-	document.body.appendChild(myForm);
-	myForm.submit();
-	document.body.removeChild(myForm);
-}
-document.getElementById("aa").onclick = sendPost;
-document.getElementById("bb").onclick = sendPost;
-</script>
 </body>
